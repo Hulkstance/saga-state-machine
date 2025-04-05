@@ -1,0 +1,10 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  
+  <ItemGroup>
+    <PackageReference Include="Aspire.Npgsql.EntityFrameworkCore.PostgreSQL" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\..\Bootstrapper\Bootstrapper.ServiceDefaults\Bootstrapper.ServiceDefaults.csproj" />
+  </ItemGroup>
+</Project>

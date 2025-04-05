@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Sdk Name="Aspire.AppHost.Sdk" Version="$(AspireVersion)"/>
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <IsAspireHost>true</IsAspireHost>
+    <UserSecretsId>aef3b4b1-a29b-4222-8379-8911d92fcd3b</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.Hosting.AppHost" />
+    <PackageReference Include="Aspire.Hosting.PostgreSQL" />
+    <PackageReference Include="Aspire.Hosting.RabbitMQ" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Services\InventoryService\InventoryService.Api\InventoryService.Api.csproj" />
+    <ProjectReference Include="..\..\Services\OrderService\OrderService.Api\OrderService.Api.csproj" />
+    <ProjectReference Include="..\..\Services\PaymentService\PaymentService.Api\PaymentService.Api.csproj" />
+  </ItemGroup>
+
+</Project>
