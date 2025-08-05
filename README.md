@@ -1,5 +1,26 @@
 # Saga Pattern with MassTransit
 
+## What is Saga?
+
+A **saga** is a **sequence of local transactions**, where each transaction updates the state within a single service and **emits an event** or **calls the next service** in the chain.
+
+If one transaction fails, the saga executes **compensating transactions** to undo the previous steps.
+
+### 📦 Example
+
+A simplified **e-commerce order flow**:
+
+1. **Order Service**: Create order.
+2. **Payment Service**: Deduct funds.
+3. **Inventory Service**: Reserve items.
+
+If payment fails, it must **cancel the order**. If inventory reservation fails, it must **refund** the payment and cancel the order.
+
+Saga pattern handles this by:
+
+* Defining forward steps (create order, deduct funds, etc.)
+* Defining compensating steps (cancel order, refund, release inventory, etc.)
+
 ## Tech Stack
 - .NET Aspire
 - MassTransit + RabbitMQ
